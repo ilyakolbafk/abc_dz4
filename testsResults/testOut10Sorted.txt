@@ -1,0 +1,11 @@
+Container contains 10 elements.
+It is Common matrix: dimension = 1. Average = 49.21
+It is Triangular matrix: dimension = 8. Average = 1.14
+It is Diagonal matrix: dimension = 6. Average = 0.48
+It is Triangular matrix: dimension = 17. Average = 0.07
+It is Common matrix: dimension = 14. Average = -1.53
+It is Diagonal matrix: dimension = 10. Average = -1.63
+It is Diagonal matrix: dimension = 5. Average = -2.22
+It is Common matrix: dimension = 16. Average = -2.40
+It is Triangular matrix: dimension = 15. Average = -2.75
+It is Common matrix: dimension = 3. Average = -28.57

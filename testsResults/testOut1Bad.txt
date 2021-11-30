@@ -1,0 +1,4 @@
+Container contains 3 elements.
+It is Common matrix: dimension = 2. Average = 2.00
+It is Diagonal matrix: dimension = 1. Average = 2.00
+It is Triangular matrix: dimension = 3. Average = 0.78
