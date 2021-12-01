@@ -17,6 +17,7 @@ void InContainer(void *c, int *len, FILE *file) {
             (*len)++;
         }
     }
+    *(double *) ((void *) ((char *) c) + intSize + doubleSize) = Average(c + intSize, ((int *) c));
 }
 
 int InMatrix(void *s, FILE *file) {
@@ -48,6 +49,7 @@ void InCommon(void *f, FILE *file) {
         fscanf(file, "%lf", (void *) (((char *) f) + c * doubleSize));
         ++c;
     }
+
 }
 
 void InDiagonal(void *f, FILE *file) {
@@ -69,6 +71,7 @@ void InTriangular(void *f, FILE *file) {
         fscanf(file, "%lf", (void *) (((char *) f) + c * doubleSize));
         ++c;
     }
+
 }
 
 // Random input to Container.
@@ -80,6 +83,7 @@ void InRndContainer(void *c, int *len, int size) {
             (*len)++;
         }
     }
+    *(double *) ((void *) ((char *) c) + intSize + doubleSize) = Average(c + intSize, ((int *) c));
 }
 
 int InRndMatrix(void *s) {
@@ -129,6 +133,25 @@ void InRndTriangular(void *f) {
         *(double *) ((void *) (((char *) f) + c * doubleSize)) = (rand() % 200001 - 100000) / 1000.0;
         ++c;
     }
+}
+
+double Average(void *f, int m) {
+    int dimension = ((int *) f);
+    int max;
+    if (m == COMMON) {
+        max = dimension * dimension;
+    } else if (m == DIAGONAL) {
+        max = dimension;
+    } else {
+        max = dimension * (dimension + 1) / 2;
+    }
+    double sum = 0;
+    int c = 2;
+    while (c - 1 <= max) {
+        sum += *(double *) ((void *) (((char *) f) + c * doubleSize));
+        ++c;
+    }
+    return sum / (dimension * dimension);
 }
 
 

@@ -8,8 +8,10 @@
 //------------------------------------------------------------------------------
 // Container based on 1-dimension array.
 
+#include <stdio.h>
+
 // Input data.
-void InContainer(void *s, FILE *file);
+void InContainer(void *s, int *len, FILE *file);
 
 int InMatrix(void *s, FILE *file);
 
@@ -30,5 +32,5 @@ void InRndDiagonal(void *f);
 
 void InRndTriangular(void *f);
 // Shaker sort for container.
-
+double Average(void *f, int m);
 #endif //ABC_DZ4_INPUT_H
