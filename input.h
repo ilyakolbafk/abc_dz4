@@ -32,5 +32,5 @@ void InRndDiagonal(void *f);
 
 void InRndTriangular(void *f);
 // Shaker sort for container.
-double Average(void *f, int m);
+
 #endif //ABC_DZ4_INPUT_H
